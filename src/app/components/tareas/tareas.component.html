@@ -1,12 +1,19 @@
 <div class="container mt-5">
     <div class="row">
         <div class="col-lg-8 offset-lg-2">
-            <input type="text" name="" id="" class="form-control " placeholder="Ingrese la tarea...">
+            <input type="text" name="" [(ngModel)]="nombreTarea" id="" (keyup.enter)="AgregarTarea()"
+                class="form-control " placeholder="Ingrese la tarea...">
         </div>
-        <div class="col-lg-6 offset-lg-3 mt-5">
-            <div class="card">
-                <h6>No hay tareas para mostrar</h6>
+        <div class="col-lg-6 offset-lg-3 mt-3">
+            <div class="card p-3">
+                <h6>No hay tareas disponibles</h6>
             </div>
+            <ul class="list-group">
+                <li class="list-group-item" *ngFor="let tarea of listaTareas">
+                    {{tarea.nombre}}
+                </li>
+
+            </ul>
         </div>
     </div>
 </div>
