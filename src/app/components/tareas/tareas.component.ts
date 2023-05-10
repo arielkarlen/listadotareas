@@ -26,4 +26,13 @@ AgregarTarea() {
 
   this.nombreTarea='';
 }
+
+eliminar(i:number) {
+  this.listaTareas.splice(i,1)
+}
+
+actualizarTarea(tarea:tarea, i:number) {
+  this.listaTareas[i].estado=!tarea.estado
+  }
+
 }
