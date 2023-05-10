@@ -5,12 +5,18 @@
                 class="form-control " placeholder="Ingrese la tarea...">
         </div>
         <div class="col-lg-6 offset-lg-3 mt-3">
-            <div class="card p-3">
+            <div class="card p-3" *ngIf="listaTareas.length == 0">
                 <h6>No hay tareas disponibles</h6>
             </div>
-            <ul class="list-group">
-                <li class="list-group-item" *ngFor="let tarea of listaTareas">
+            <ul class="list-group" *ngIf="listaTareas.length > 0">
+                <li class="list-group-item d-flex justify-content-between"
+                    *ngFor="let tarea of listaTareas; let i = index">
+                    <span class="cursor" (click)="actualizarTarea(tarea, i)">
+                        <i class="text-success"
+                            [ngClass]="tarea.estado == false ? 'fa-regular fa-circle' : 'fa-solid fa-circle-check'"></i>
+                    </span>
                     {{tarea.nombre}}
+                    <span class="text-danger cursor" (click)="eliminar(i)"><i class="fa-solid fa-trash"></i></span>
                 </li>
 
             </ul>

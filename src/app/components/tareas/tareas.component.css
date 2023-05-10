@@ -5,3 +5,7 @@ input {
 .form-control {
     font-size: 12px;
 }
+
+.cursor:hover{
+    cursor: pointer;
+}
