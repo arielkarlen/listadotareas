@@ -3,10 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NabvarComponent } from './components/nabvar/nabvar.component';
+import { TareasComponent } from './components/tareas/tareas.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NabvarComponent,
+    TareasComponent
   ],
   imports: [
     BrowserModule,
